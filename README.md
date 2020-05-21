@@ -1,4 +1,4 @@
-# khammai Vuetify - Vuejs - Dashboard Modern
+# khammai Dashboard Modern
 
 ## Project setup
 ```
