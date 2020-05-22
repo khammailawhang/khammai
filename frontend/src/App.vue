@@ -1,7 +1,7 @@
 <template>
   <v-app>
   <Navbar/>
-    <v-content class="ma-4">
+    <v-content id="keep" class="fontsize ma-4">
       <router-view></router-view>
     </v-content>
      <Footer/>
@@ -26,3 +26,15 @@ export default {
   }),
 };
 </script>
+
+<style>
+#keep{
+  font-family: 'Vision','Noto Sans Lao','Phetsarath OT','Saysettha OT',Roboto, Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+.indigo--text{
+  font-size: 16px;
+}
+
+
+</style>

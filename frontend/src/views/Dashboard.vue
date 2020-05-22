@@ -115,7 +115,7 @@
     </v-card-actions>
   </v-card>
       </v-flex>
-        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+        <!-- <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
               <v-card class="text-center ma-3">
                 <v-responsive class="pt-4">
                    <v-avatar size="100" class="red lighten-2">
@@ -133,7 +133,7 @@
                     </v-btn>
                 </v-card-actions>
               </v-card>
-        </v-flex>
+        </v-flex> -->
        
       </v-layout>
     </v-container>
@@ -151,10 +151,10 @@ export default {
   },
   data : () => ({
     team: [
-      {name: 'Iyad', role: 'web developer', avatar:'/img1.png'},
-      {name: 'Reda', role: 'Graphic designer', avatar:'/img2.png'},
-      {name: 'Zineb', role: 'web developer', avatar:'/img3.png'},
-      {name: 'Hu TechGroup', role: 'Desktop developer', avatar:'/img4.png'},
+      // {name: 'Iyad', role: 'web developer', avatar:'/img1.png'},
+      // {name: 'Reda', role: 'Graphic designer', avatar:'/img2.png'},
+      // {name: 'Zineb', role: 'web developer', avatar:'/img3.png'},
+      // {name: 'Hu TechGroup', role: 'Desktop developer', avatar:'/img4.png'},
     ]
   }),
 }
