@@ -2,6 +2,10 @@
 
 ## Project setup
 ```
+cd /backend
+npm install
+node app.js or pm2 start app.js
+
 cd /frontend
 npm install
 ```
