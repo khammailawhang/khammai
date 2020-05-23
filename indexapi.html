@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Bootstrap CSS 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4" id="app">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">CountryCode</th>
+                    <th scope="col">Slug</th>
+                    <th scope="col">NewConfirmed</th>
+                    <th scope="col">TotalConfirmed</th>
+                    <th scope="col">NewDeaths</th>
+                    <th scope="col">TotalDeaths</th>
+                    <th scope="col">NewRecovered</th>
+                    <th scope="col">TotalRecovered</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="Countrie in Countries">
+
+                    <td>{{ Countrie.Country }}</td>
+                    <td>{{ Countrie.CountryCode }}</td>
+                    <td>{{ Countrie.Slug }}</td>
+                    <td>{{ Countrie.NewConfirmed }}</td>
+                    <td>{{ Countrie.TotalConfirmed }}</td>
+                    <td>{{ Countrie.NewDeaths }}</td>
+                    <td>{{ Countrie.TotalDeaths }}</td>
+                    <td>{{ Countrie.NewRecovered }}</td>
+                    <td>{{ Countrie.TotalRecovered }}</td>
+                    <td>{{ Countrie.Date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                Countries: []
+            },
+            mounted: function() {
+                axios.get('https://api.covid19api.com/summary')
+                    .then(response => {
+                        this.Countries = response.data.Countries;
+                        console.log(response);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            }
+        })
+    </script>
+</body>
+
+</html>
