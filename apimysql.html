@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Bootstrap CSS 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4" id="app">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">gender</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">image</th>
+
+            </thead>
+            <tbody>
+                <tr v-for="Countrie in registers">
+
+                    <td>{{ Countrie.gender }}</td>
+                    <td>{{ Countrie.owner_name }}</td>
+                    <td>{{ Countrie.phone }}</td>
+                    <td>
+
+                        <v-avatar size="10">
+                            <img :src="Countrie.img_pass"></img>
+                        </v-avatar>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                registers: []
+            },
+            mounted: function() {
+                axios.get('http://localhost:8083/api/register')
+                    .then(response => {
+                        this.registers = response.data.registers;
+                        console.log(response);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            }
+        })
+    </script>
+</body>
+
+</html>
