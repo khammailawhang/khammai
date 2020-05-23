@@ -7,7 +7,7 @@ router.use('/secret-ruote', require('./secret-ruote'))
 router.use('/register', require('./register'));
 
 
-// router.use('/users', require('./users'));
+router.use('/users', require('./users'));
 
 
 module.exports = router

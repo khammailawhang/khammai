@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Dashboard from '../views/Dashboard.vue'
 import Register from '../views/Register.vue'
-
+import Login from '../views/Login.vue'
 import Team from '../views/Team.vue'
 
 Vue.use(VueRouter)
@@ -18,11 +18,12 @@ const routes = [
         //             return c("router-view");
         //         }
         //     },
-        //     children: [{
-        //             path: "/login",
-        //             name: "login",
-        //             component: Login
-        //         },
+        //     children: [
+        {
+            path: "/login",
+            name: "login",
+            component: Login
+        },
         {
             path: '/',
             name: 'dashboard',

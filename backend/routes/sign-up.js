@@ -45,16 +45,7 @@ router.post('/', userMiddleware.validateRegister, (req, res, next) => {
                   ${db.escape(req.body.phone,)}, 
                   ${db.escape(req.body.email,)}, 
                   ${db.escape(req.body.username,)}, 
-                  
-                  ${db.escape(req.body.register)},
-                  ${db.escape(req.body.register_create)},
-                  ${db.escape(req.body.register_update)},
-                  ${db.escape(req.body.register_delete)},
-                  ${db.escape(req.body.register_detail)},
-                  ${db.escape(req.body.register_report)},
-                  ${db.escape(req.body.register_export)},
-                
-                  ${db.escape(req.body.status)},
+      
                   now())`,
                             (err, result) => {
                                 if (err) {
